@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SCRAPBOOK</title>
+	<link rel="icon" type="image/png" href="data\pics\Screenshot (56).png">
+	<link rel="stylesheet" type="text/css" href="data\css\bootstrap.min.css">
+
+	<link rel="stylesheet" type="text/css">
+  
+ <script language="javascript">
+function check(form)/*function to check userid & password*/
+{
+ /*the following code checkes whether the entered userid and password are matching*/
+ if(form.userid.value == "username" && form.pswrd.value == "password")
+  {
+    window.open("data/home-0.html","_blank")/*opens the target page while Id & password matches*/
+  }
+ else
+ {
+   alert("Error Password or Username")/*displays error message*/
+  }
+}
+</script>
+
+	<style type="text/css">
+		
+		video {
+    max-width: 100%;
+    height: 350px;
+    
+}
+		body{ 
+
+          
+          background-repeat: no-repeat;
+          background-size: 100% 100vh;
+          			margin-right: 50px;
+			margin-left: 50px;
+			margin-top: 10px;
+			margin-bottom: 0px;
+			background-size: 1400px 800px;
+		}
+	</style>
+</head>
+<body style="background-image: url(data/pics/back.jpg);">
+<!--bar start here-->
+<div class="row">
+
+   <div class="col-lg-3" style="padding-left: 0px;"><img src="data\pics\Screenshot.png" width="120px" height="120px" align="left"></div>
+   <div class="col-lg-9" style="padding-top: 0px;">
+
+
+	<div class="row"> 
+
+<marquee><h3 style="color: white;"> <font face="Comic sans MS" size="5">Scrapbook a way to CONNECT</font></h3></marquee>
+
+  <div class="col-lg-4"></div>
+                      <form name="login" method="POST"> 
+	                  <div class=" col-lg-3" align="right"><input type="text" name="userid"class="form-control" placeholder="username"></div>
+                      <div class="col-lg-3" align="right"><input type="password" name="pswrd"class="form-control" placeholder="password"></div>
+                      <div class="col-lg-2" ><button class="btn btn-success" onclick="check(this.form)">login</button></div>
+                        </form>
+    </div>
+     </div>
+</div>
+<!-- bar end here-->
+<br>
+<!-- video and sigh up form start here-->
+<div class="row">
+<!--video tag  here-->
+	<div class="col-lg-7"><video autoplay> <source src="data/img/Connecting people to their social environment.mp4" type="video/mp4"></video>
+
+
+
+	<br>
+
+
+	</div>
+	<!--sigh up form is here-->
+	<div class="col-lg-5">
+		     <form>
+ <fieldset>
+ <legend>Sigh Up</legend>
+   <form class="form-inline">
+  <div class="form-group">
+    <label for="first_name">first name</label>
+    <input type="text" class="form-control" id="first_name" placeholder="first_name">
+ <br>
+  <div class="form-group">
+    <label for="middle_name">middle name</label>
+    <input type="lastname" class="form-control"  id="middletname" placeholder="middle_name">
+  </div>
+   </div>
+  <div class="form-group">
+    <label for="last_name">last name</label>
+    <input type="lastname" class="form-control" id="lastname" placeholder="last_name">
+  </div>
+  
+ 
+
+
+  <div class="form-group">
+    <label for="InputEmail">email address</label>
+    <input type="email" class="form-control" id="InputEmail" placeholder="Email">
+  </div>
+  <div class="form-group">
+    <label for="InputPassword1">password</label>
+    <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="InputPassword2">retype Password</label>
+    <input type="password" class="form-control" id="InputPassword2" placeholder="confirm_Password">
+  </div>
+  <hr>
+  <div>
+    <input type="radio" name="gender" value="male" checked> Male<br>
+    <input type="radio" name="gender" value="female"> Female<br>
+    <input type="radio" name="gender" value="other"> Other
+  </div>
+  
+   <hr>
+ <hr>
+   <div class="checkbox">
+        <label>
+          <input type="checkbox">agree with  term & condition
+        </label>
+      </div>
+  <button type="submit" class="btn btn-primary btn-lg" onclick="alert('Your Account will be activated soon...')">Sigh up</button>
+  <button type="reset" class="btn btn-danger btn-lg" style="font: 14px;">  reset  </button>
+  </form>
+  <!--form end here-->
+  </div>
+</div>
+
+
+
+<br>
+<footer style="background:#F5B7B1;"><center>
+      
+  <p style="color: black;">SCRAPBOOK © 2017</p>
+  <p style="color: #330000">Contact information: www.email.scrapbook.com</p>
+  <p style="color: #330000">Tel. no.: 1800-1800-1800</p>
+  <div align="right">
+ <img src="data\pics\Facebook.png" width="35px" height="35px">
+ <img src="data\pics\Google+.png" width="35px" height="35px">
+ <img src="data\pics\Instagram.png" width="35px" height="35px">
+ <img src="data\pics\Twitter.png" width="35px" height="35px">
+ <img src="data\pics\WhatsApp.png" width="35px" height="35px"></div>
+
+    <p><strong>Note:</strong>&copy All rights resrved by Scrapbook</p>
+   </center>
+</footer>
+</body>
+</html>
