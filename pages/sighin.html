@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>www.fourpointers.com</title>
+   <link rel="icon"  type="image/jpg" href="..\pics\Student.png">
+   <meta charset="utf-8">
+   <link rel="stylesheet" type="text/css" href="..\css\bootstrap.min.css">
+     <link rel="stylesheet" type="text/css" href="..\pages\style.css">
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+      
+</head>
+<body style="background: #4ca7d1">
+ <canvas id="canvas" width="45" height="45"
+style="background-color:#333">
+</canvas>
+<script>
+    var canvas = document.getElementById("canvas");
+var ctx = canvas.getContext("2d");
+var radius = canvas.height / 2;
+ctx.translate(radius, radius);
+radius = radius * 0.90
+setInterval(drawClock, 1000);
+
+function drawClock() {
+  drawFace(ctx, radius);
+  drawNumbers(ctx, radius);
+  drawTime(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+  var grad;
+  ctx.beginPath();
+  ctx.arc(0, 0, radius, 0, 2*Math.PI);
+  ctx.fillStyle = 'white';
+  ctx.fill();
+  grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+  grad.addColorStop(0, '#333');
+  grad.addColorStop(0.5, 'white');
+  grad.addColorStop(1, '#333');
+  ctx.strokeStyle = grad;
+  ctx.lineWidth = radius*0.1;
+  ctx.stroke();
+  ctx.beginPath();
+  ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+  ctx.fillStyle = '#333';
+  ctx.fill();
+}
+
+function drawNumbers(ctx, radius) {
+  var ang;
+  var num;
+  ctx.font = radius*0.15 + "px arial";
+  ctx.textBaseline="middle";
+  ctx.textAlign="center";
+  for(num = 1; num < 13; num++){
+    ang = num * Math.PI / 6;
+    ctx.rotate(ang);
+    ctx.translate(0, -radius*0.85);
+    ctx.rotate(-ang);
+    ctx.fillText(num.toString(), 0, 0);
+    ctx.rotate(ang);
+    ctx.translate(0, radius*0.85);
+    ctx.rotate(-ang);
+  }
+}
+
+function drawTime(ctx, radius){
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    //hour
+    hour=hour%12;
+    hour=(hour*Math.PI/6)+
+    (minute*Math.PI/(6*60))+
+    (second*Math.PI/(360*60));
+    drawHand(ctx, hour, radius*0.5, radius*0.07);
+    //minute
+    minute=(minute*Math.PI/30)+(second*Math.PI/(30*60));
+    drawHand(ctx, minute, radius*0.8, radius*0.07);
+    // second
+    second=(second*Math.PI/30);
+    drawHand(ctx, second, radius*0.9, radius*0.02);
+}
+
+function drawHand(ctx, pos, length, width) {
+    ctx.beginPath();
+    ctx.lineWidth = width;
+    ctx.lineCap = "round";
+    ctx.moveTo(0,0);
+    ctx.rotate(pos);
+    ctx.lineTo(0, -length);
+    ctx.stroke();
+    ctx.rotate(-pos);
+}
+</script>
+
+
+
+<!--social media icon-->
+
+  <div align="right">
+     <marquee style="color: green"><strong><b>It is true that experience is one of life’s best teachers. But if you don’t study you will probably never get any experience in the first place.</b></strong></marquee> 
+
+
+     <div class="row"><div class="col-lg-3"><a href="..\pages\m_index.html"><img src="..\pics\logo - Copy.jpg" class="img-rounded" align="left"></a></div><div class="col-lg-9">
+      <a href="https://www.facebook.com/" target="_blank">
+      <img src="..\pics\Facebook.png" width="40px" height="40px">
+    <a href="#"><img src="..\pics\Google+.png" width="40px" height="40px">
+     <a href="#"><img src="..\pics\Instagram.png"  width="40px" height="40px">
+      <a href="#"><img src="..\pics\Pinterest.png" width="40px" height="40px">
+    <a href="#"><img src="..\pics\Twitter.png" width="40px" height="40px">
+      <a href="#"><img src="..\pics\YouTube.png" width="40px" height="40px" ></a>
+     <a href="#"><img src="..\pics\WhatsApp.png" width="40px" height="40px"></a></div></div>
+  
+  </div>
+<!--social media icon ended-->
+ 
+<hr>
+    <!--navbar strat here-->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header" >
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="..\pages\m_index.html">www.4pointers.com</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="..\pages\m_index.html">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Career<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="..\pages\Career_management.html">Career management</a></li>
+            <li class="divider"></li>
+            <li><a href="..\pages\Career_changing.html">Career changing</a></li>
+            <li class="divider"></li>
+            <li><a href="..\pages\career_success.html">Career success</a></li>
+            <li class="divider"></li>
+            <li><a href="..\pages\Career_support.html">Career support</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Engineering<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="..\pages\Agricultural_Engineer.html">Agricultural Engineer</a></li>
+            <li class="divider"></li>
+            <li><a href="..\pages\Biomedical_Engineer.html">Biomedical Engineer</a></li>
+            <li class="divider"></li>
+            <li><a href="..\pages\Computer_Engineer.html">Computer Engineer</a></li>
+            <li class="divider"></li>
+            <li><a href="..\pages\Electrical_Engineer.html">Electrical Engineer</a></li>
+            <li class="divider"></li>
+            <li><a href="..\pages\Mechanical_Engineer.html">Mechanical Engineer</a></li>
+            <li class="divider"></li>
+            <li><a href="..\pages\Petroleum_Engineer.html">Petroleum Engineer</a></li>
+          </ul>
+        </li>
+
+         <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Medical<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="..\pages\Physician.html">Physician</a></li>
+            <li class="divider"></li>
+            <li><a href="..\pages\Pharmacist.html">Pharmacist</a></li>
+            <li class="divider"></li>
+            <li><a href="..\pages\Physiotherapist.html">Physiotherapist</a></li>
+            <li class="divider"></li>
+            <li><a href="..\pages\Dental Surgeon.html">Dental Surgeon</a></li>
+            <li class="divider"></li>
+            <li><a href="..\pages\bams.html">B.A.M.S</a></li>
+            <li class="divider"></li>
+            <li><a href="..\pages\Nursing.html">Nursing</a></li>
+          </ul>
+        </li>
+        
+
+         <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Enquiary<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="..\pages\parents.html">Parents</a></li>
+            <li class="divider"></li>
+            <li><a href="..\pages\student.html">Students</a></li>
+            <li class="divider"></li>
+            <li><a href="..\pages\teacher.html">Teachers</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Discusion point </a></li>
+            <li class="divider"></li>
+            <li><a href="..\pages\about_us.html">About us</a></li>
+            <li class="divider"></li>
+            <li><a href="..\pages\contact_us.html">Contact us</a></li>
+            <li class="divider"></li>
+            <li><a href="..\pages\media_gallery.html">Media Gallery</a></li>
+          </ul>
+        </li>
+        
+      </ul>
+
+          <form class="navbar-form navbar-left">
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search">
+        <div class="input-group-btn">
+          <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+            </button>
+            </div>
+            </div>
+            </form>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="..\pages\sighup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="..\pages\sighin.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!--navbar end here-->
+
+
+
+<div class="row"><div class="col-lg-4"><form>
+  <div class="form-group">
+    <label for="InputEmail">Email/Phone</label>
+    <input type="email/phone" class="form-control" id="InputEmail" placeholder="Email/phone">
+  </div>
+  <div class="form-group">
+    <label for="InputPassword1">Password</label>
+    <input type="password" class="form-control" id="InputPassword1" placeholder="Password">
+  </div>
+<div class="checkbox">
+        <label>
+          <input type="checkbox">save password
+        </label>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-success btn-lg"><a href="..\pages\m_index.html">sign in</a></button>
+
+
+</form></div>
+<div class="col-lg-8" align="right">
+	
+	<video width="660" controls autoplay="">
+       <source src="..\video\Career Option In Science , What to do After 12th Science_.mp4" type="video/mp4">
+      </video>
+      <a href="..\video\Career Option In Science , What to do After 12th Science_.mp4" download="..\video\Career Option In Science , What to do After 12th Science_.mp4"><br><span class="glyphicon glyphicon-download-alt" aria-hidden="true"></a> </span> <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>  To download this video click there 
+</div></div>
+
+
+<footer style="background: white;"><center>
+<h1 style="color: #ff00ff">Aknowleged for:- <b style="color: #00ffbf">Exposys Data Labs</b></h1>
+  <p style="color: black;">Posted by: <b style="color: #4000ff;">Tarun Kaushal</b></p>
+  <p style="color: #330000">Contact information: <a href="tarun14feb1999@gmail.com">tarun14feb1999@gmail.com</a></p>
+
+
+<p><strong>Note:</strong>&copy All rights resrved by 4pointers-2k20, project work</p>
+</center></footer>
+</body>
+</html>
